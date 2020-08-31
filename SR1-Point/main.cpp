@@ -5,9 +5,18 @@ using namespace std;
 #include "Render.h"
 int main()
 {
-    Render render(3072, 1920, (string *) "hahahaha.bmp");
-    render.glClearColor(0, 255, 0);
+    Render render;
+    render.glCreateWindow(800, 600);
+    render.glViewPort(350, 250, 50, 50);
+    render.glClearColor(0, 0, 1);
     render.glClear();
-    render.glFinish();
+    render.glColor(1,0,0);
+    render.glVertex(-1,-1);
+    render.glVertex(-1, 1);
+    render.glVertex(0,0);
+    render.glVertex(1,-1);
+    render.glVertex(1, 1);
+    render.glFinish("lol.bmp");
+
     return 0;
 }
