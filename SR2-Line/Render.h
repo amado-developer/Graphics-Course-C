@@ -1,9 +1,9 @@
 //
-// Created by Amado Garcia on 8/30/20.
+// Created by Amado Garcia on 8/31/20.
 //
 
-#ifndef SR1_POINT_RENDER_H
-#define SR1_POINT_RENDER_H
+#ifndef SR2_LINE_RENDER_H
+#define SR2_LINE_RENDER_H
 
 #include <vector>
 #include <string>
@@ -24,6 +24,9 @@ private:
     std::vector<unsigned char> infoHeader();
     vector<vector<vector<unsigned char>>> framebuffer;
     void glPoint(int x, int y);
+    inline int glAdaptToViewportXCoordinates(int x);
+    inline int glAdaptToViewportYCoordinates(int y);
+    inline void swap(int &x, int &y);
 
 public:
     Render();
@@ -35,6 +38,8 @@ public:
     void glCreateWindow(int width, int height);
     void glViewPort(int x, int y, int width, int height);
     void glVertex(int x, int y);
+    void glLine(int x0, int x1, int y0, int y1);
+
 };
 
-#endif //SR1_POINT_RENDER_H
+#endif //SR2_LINE_RENDER_H

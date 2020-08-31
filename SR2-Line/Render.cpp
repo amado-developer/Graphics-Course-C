@@ -1,6 +1,8 @@
 //
-// Created by Amado Garcia on 8/30/20.
+// Created by Amado Garcia on 8/31/20.
 //
+
+#include "Render.h"
 
 #include "Render.h"
 #include <vector>
@@ -12,31 +14,31 @@ vector<unsigned char> Render::fileHeader()
 {
     int fileSize = 14 + 40 + width * height * 3;
     vector<unsigned char> fileHeader
-    {
-        'B', 'M',
-        (unsigned char)(fileSize), 0, 0 , 0,
-        0, 0, 0, 0,
-        54, 0, 0, 0
-    };
+            {
+                    'B', 'M',
+                    (unsigned char)(fileSize), 0, 0 , 0,
+                    0, 0, 0, 0,
+                    54, 0, 0, 0
+            };
     return fileHeader;
 }
 vector<unsigned char> Render::infoHeader()
 {
     int imageSize = this->width * this->height * 3;
     vector<unsigned char> infoHeader
-    {
-        40,0,0,0,
-        (unsigned char)(width),(unsigned char)(width >> 8),(unsigned char)(width >> 16),(unsigned char)(width >> 24),
-        (unsigned char)(height),(unsigned char)(height >> 8),(unsigned char)(height >> 16),(unsigned char)(height >> 24),
-        1,0,
-        24,0,0,0,
-        0,0,
-        (unsigned char)(imageSize),0,0,0,
-        0,0,0,0,
-        0,0,0,0,
-        0,0,0,0,
-        0,0,0,0
-    };
+            {
+                    40,0,0,0,
+                    (unsigned char)(width),(unsigned char)(width >> 8),(unsigned char)(width >> 16),(unsigned char)(width >> 24),
+                    (unsigned char)(height),(unsigned char)(height >> 8),(unsigned char)(height >> 16),(unsigned char)(height >> 24),
+                    1,0,
+                    24,0,0,0,
+                    0,0,
+                    (unsigned char)(imageSize),0,0,0,
+                    0,0,0,0,
+                    0,0,0,0,
+                    0,0,0,0,
+                    0,0,0,0
+            };
 
     return infoHeader;
 }
@@ -49,7 +51,7 @@ void Render::glClear() {
     for (int i = 0; i < height; i++){
         for (int j = 0; j < width; j++){
             for (int k = 0; k < 3; k++){
-               framebuffer[j][i][k] = (unsigned char)backgroundColor[k];
+                framebuffer[j][i][k] = (unsigned char)backgroundColor[k];
             }
         }
     }
@@ -104,3 +106,66 @@ void Render::glFinish(char *filename){
     }
     fclose(imageFile);
 }
+// This Bresehnham's algorithm implementation was taken from class's code, adapted  and modified a little bit to use it with viewport.
+void Render::glLine(int x1, int y1, int x2, int y2)
+{
+    x1 = glAdaptToViewportXCoordinates(x1);
+    x2 = glAdaptToViewportXCoordinates(x2);
+    y1 = glAdaptToViewportYCoordinates(y1);
+    y2 = glAdaptToViewportYCoordinates(y2);
+
+    int dy = abs(y2 - y1);
+    int dx = abs(x2 - x1);
+
+    bool steep = dy > dx;
+
+    if(steep){
+        swap(x1, y1);
+        swap(x2, y2);
+        dy = abs(y2 - y1);
+        dx = abs(x2 - x1);
+    }
+
+    if(x1 > x2){
+        swap(x1, x2);
+        swap(y1, y2);
+    }
+
+    int offset = 0;
+    int threshold = 1;
+    int y = y1;
+
+    for(auto x{x1}; x < x2; ++x)
+    {
+        if(steep)
+        {
+            glPoint(y, x);
+        }
+        else
+        {
+            glPoint(x, y);
+        }
+        offset += dy * 2;
+
+        if(offset >= threshold)
+        {
+            y += y1 < y2 ? 1 : - 1;
+            threshold += 2 * dx;
+        }
+    }
+}
+inline int Render:: glAdaptToViewportXCoordinates(int x)
+{
+    return (x + 1) * (this->vW * 0.5) + this->vX;
+}
+inline int Render:: glAdaptToViewportYCoordinates(int y)
+{
+    return (y + 1) * (this->vH * 0.5) + this->vY;
+}
+inline void Render:: swap(int &v1, int &v2){
+    int tempV1 = v1;
+    v1 = v2;
+    v2 = tempV1;
+}
+
+
