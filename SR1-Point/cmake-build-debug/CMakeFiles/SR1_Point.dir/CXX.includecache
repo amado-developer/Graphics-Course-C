@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/amado-developer/College/Graphics/Graphics-Course-C/SR1-Point/Render.h
+vector
+-
+string
+-
+
+/Users/amado-developer/College/Graphics/Graphics-Course-C/SR1-Point/main.cpp
+iostream
+-
+fstream
+-
+Render.h
+/Users/amado-developer/College/Graphics/Graphics-Course-C/SR1-Point/Render.h
+

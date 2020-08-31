@@ -6,12 +6,11 @@
 #include <vector>
 using namespace std;
 
-Render::Render(int width, int height, string *filename)
+Render::Render(int width, int height, string *filename) : framebuffer(width, vector<vector<unsigned char >>(height, vector<unsigned char >(3)))
 {
     this -> width = width;
     this -> height = height;
     this->filename = filename;
-    this->frameBuffer = NULL;
 }
 vector<unsigned char> Render::fileHeader()
 {
@@ -29,6 +28,7 @@ vector<unsigned char> Render::fileHeader()
 
 vector<unsigned char> Render::infoHeader()
 {
+    unsigned char lol = framebuffer.at(0).at(0).at(0);
     int imageSize = this->width * this->height * 3;
 
     vector<unsigned char> infoHeader
@@ -50,11 +50,10 @@ vector<unsigned char> Render::infoHeader()
 }
 
 void Render::glClear() {
-    frameBuffer = (unsigned char *)malloc(3*width*height);
     for (int i = 0; i < height; i++){
         for (int j = 0; j < width; j++){
             for (int k = 0; k < 3; k++){
-                *(frameBuffer + i*width*3 + j*3 + k) = (unsigned char)current_color[k];
+               framebuffer[j][i][k] = (unsigned char)current_color[k];
             }
         }
     }
@@ -79,11 +78,12 @@ void Render::glFinish(){
         fwrite(&h, 1, 1, imageFile);
     }
 
-    //adapted from https://stackoverflow.com/questions/2654480/writing-bmp-image-in-pure-c-c-without-other-libraries
-    for(int i=0; i<height; i++)
-    {
-        fwrite(frameBuffer+(width*(height-i-1)*3),3,width,imageFile);
-
+    for (int i = 0; i < height; i++){
+        for (int j = 0; j < width; j++){
+            for (int k = 0; k < 3; k++){
+                fwrite(&framebuffer[j][i][k], 1, 1, imageFile);
+            }
+        }
     }
     fclose(imageFile);
 }
