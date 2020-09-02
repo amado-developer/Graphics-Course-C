@@ -36,34 +36,7 @@ int main()
     r.glClear();
     r.glColor(1, 1, 0);
 
-    r.glColor(0.5, 0.5, 1);
 
-//    r.glVertex(413, 177);
-//    r.glVertex(448, 159);
-//    r.glVertex(502, 88);
-//    r.glVertex(553, 53);
-//    r.glVertex(535, 36);
-//    r.glVertex(676, 37);
-//    r.glVertex(660, 52);
-//    r.glVertex(750, 145);
-//    r.glVertex(761, 179);
-//    r.glVertex(672, 192);
-//    r.glVertex(659, 214);
-//    r.glVertex(615, 214);
-//    r.glVertex(632, 230);
-//    r.glVertex(580, 230);
-//    r.glVertex(597, 215);
-//    r.glVertex(552, 214);
-//    r.glVertex(517, 144);
-//    r.glVertex(466, 180);
-//
-//
-//    r.glColor(1, 0.5, 1);
-//    r.glVertex(682, 175);
-//    r.glVertex(708, 120);
-//    r.glVertex(735, 148);
-//    r.glVertex(739, 170);
-//
 
     r.glFinish("b.bmp");
 
