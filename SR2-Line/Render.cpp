@@ -79,27 +79,41 @@ void Render::glViewPort(int vX, int vY, int vW, int vH){
     this->vW = vW;
     this->vH = vH;
 }
-void Render::glVertex(int x, int y){
-    int pointX = (x + 1) * (this->vW * 0.5) + this->vX;
-    int pointY= (y + 1) * (this->vH * 0.5) + this->vY;
-    glPoint(pointX, pointY);
+void Render::glVertex(int x, int y)
+{
+    if((x <= 1 && x >= -1) && (y <= 1 && y >= -1))
+    {
+        int pointX = (x + 1) * (this->vW * 0.5) + this->vX;
+        int pointY= (y + 1) * (this->vH * 0.5) + this->vY;
+        glPoint(pointX, pointY);
+    }else{
+        int pointX = x + vX;
+        int pointY = y + vY;
+        glPoint(pointX, pointY);
+    }
 }
-void Render::glFinish(char *filename){
+void Render::glFinish(char *filename)
+{
     FILE* imageFile = fopen(filename, "wb");
 
     vector<unsigned char> file = fileHeader();
-    for(auto f: file){
+    for(auto f: file)
+    {
         fwrite(&f, 1, 1, imageFile);
     }
 
     vector<unsigned char> header = infoHeader();
-    for(auto h: header){
+    for(auto h: header)
+    {
         fwrite(&h, 1, 1, imageFile);
     }
 
-    for (int i = 0; i < height; i++){
-        for (int j = 0; j < width; j++){
-            for (int k = 0; k < 3; k++){
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            for (int k = 0; k < 3; k++)
+            {
                 fwrite(&framebuffer[j][i][k], 1, 1, imageFile);
             }
         }
@@ -109,24 +123,37 @@ void Render::glFinish(char *filename){
 // This Bresehnham's algorithm implementation was taken from class's code, adapted  and modified a little bit to use it with viewport.
 void Render::glLine(int x1, int y1, int x2, int y2)
 {
-    x1 = glAdaptToViewportXCoordinates(x1);
-    x2 = glAdaptToViewportXCoordinates(x2);
-    y1 = glAdaptToViewportYCoordinates(y1);
-    y2 = glAdaptToViewportYCoordinates(y2);
+    if((x1 <= 1 && x1 >= -1) && (y1 <= 1 && y1 >= -1)
+    &&  (x2 <= 1 && x2 >= -1) && (y2 <= 1 && y2 >= -1))
+    {
+        x1 = glAdaptToViewportXCoordinates(x1);
+        x2 = glAdaptToViewportXCoordinates(x2);
+        y1 = glAdaptToViewportYCoordinates(y1);
+        y2 = glAdaptToViewportYCoordinates(y2);
+    }
+    else
+    {
+        x1 += vX;
+        x2 += vX;
+        y1 += vY;
+        y2 += vY;
+    }
 
     int dy = abs(y2 - y1);
     int dx = abs(x2 - x1);
 
     bool steep = dy > dx;
 
-    if(steep){
+    if(steep)
+    {
         swap(x1, y1);
         swap(x2, y2);
         dy = abs(y2 - y1);
         dx = abs(x2 - x1);
     }
 
-    if(x1 > x2){
+    if(x1 > x2)
+    {
         swap(x1, x2);
         swap(y1, y2);
     }
@@ -167,5 +194,3 @@ inline void Render:: swap(int &v1, int &v2){
     v1 = v2;
     v2 = tempV1;
 }
-
-
