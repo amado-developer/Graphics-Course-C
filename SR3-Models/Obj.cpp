@@ -7,10 +7,13 @@
 #include <fstream>
 #include <sstream>
 
+Obj::Obj(string filename) {
+    this->filename = filename;
+}
 void Obj::read()
 {
     ifstream inFile;
-    inFile.open("./cube.obj");
+    inFile.open("./" + filename);
     if (!inFile) {
         cerr << "Unable to open file";
         exit(1);   // call system to stop
@@ -72,8 +75,9 @@ void Obj::read()
             vector<int> facePosition1{};
             for(auto f : face)
             {
-                string value1(1,f[0]);
-                facePosition1.push_back(stoi(value1));
+                int delimeter = f.find("/");
+                string value = f.substr(0, delimeter);
+                facePosition1.push_back(stoi(value));
             }
             faces.push_back(facePosition1);
         }
@@ -95,4 +99,12 @@ void Obj::read()
         }
         cout<<"\n";
     }
+}
+vector<vector<float>> Obj::getVertices()
+{
+    return this->vertices;
+}
+vector<vector<int>> Obj::getFaces()
+{
+    return this->faces;
 }

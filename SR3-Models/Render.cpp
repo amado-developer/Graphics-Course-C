@@ -1,11 +1,13 @@
 //
 // Created by Amado Garcia on 8/31/20.
 //
-
+#include <iostream>
 #include "Render.h"
 
 #include "Render.h"
+#include "Obj.h"
 #include <vector>
+#include <cmath>
 using namespace std;
 
 Render::Render(){
@@ -43,9 +45,13 @@ vector<unsigned char> Render::infoHeader()
     return infoHeader;
 }
 void Render::glPoint(int x, int y) {
-    framebuffer[x][y][0] = pointColor[0];
-    framebuffer[x][y][1] = pointColor[1];
-    framebuffer[x][y][2] = pointColor[2];
+//    cout<<x<<","<<y<<endl;
+    if(x >= 0 && y >= 0 && x <= width && y <= height && x <= (vW + vX) && y <= (vH + vY))
+    {
+        framebuffer[x][y][0] = pointColor[0];
+        framebuffer[x][y][1] = pointColor[1];
+        framebuffer[x][y][2] = pointColor[2];
+    }
 }
 void Render::glClear() {
     for (int i = 0; i < height; i++){
@@ -114,12 +120,23 @@ void Render::glFinish(char *filename)
     fclose(imageFile);
 }
 // This Bresehnham's algorithm implementation was taken from class's code, adapted  and modified a little bit to use it with viewport.
-void Render::glLine(int x1, int y1, int x2, int y2)
+void Render::glLine(int &x1, int &y1, int &x2, int &y2)
 {
-    x1 = glAdaptToViewportXCoordinates(x1);
-    x2 = glAdaptToViewportXCoordinates(x2);
-    y1 = glAdaptToViewportYCoordinates(y1);
-    y2 = glAdaptToViewportYCoordinates(y2);
+    if(!isPixels)
+    {
+        x1 = glAdaptToViewportXCoordinates(x1);
+        x2 = glAdaptToViewportXCoordinates(x2);
+        y1 = glAdaptToViewportYCoordinates(y1);
+        y2 = glAdaptToViewportYCoordinates(y2);
+    }
+
+    else
+    {
+        x1 = x1 + vX;
+        x2 = x2 + vX;
+        y1 = y1 + vY;
+        y2 = y2 + vY;
+    }
 
     int dy = abs(y2 - y1);
     int dx = abs(x2 - x1);
@@ -144,7 +161,7 @@ void Render::glLine(int x1, int y1, int x2, int y2)
     int threshold = 1;
     int y = y1;
 
-    for(auto x{x1}; x < x2; ++x)
+    for(auto x{x1}; x <= x2; ++x)
     {
         if(steep)
         {
@@ -175,4 +192,37 @@ inline void Render:: swap(int &v1, int &v2){
     int tempV1 = v1;
     v1 = v2;
     v2 = tempV1;
+}
+void Render::load(string filename, vector<double> translate, vector<double> scale)
+{
+
+    Obj o(filename);
+    o.read();
+    vector<vector<float>> vertices = o.getVertices();
+    vector<vector<int>> faces = o.getFaces();
+
+    for(auto face : faces)
+    {
+        int vcount = face.size();
+        for(auto j{0}; j < vcount; ++j)
+        {
+            int i = (j+1) % vcount;
+           auto initialVertex1 =  face[j] - 1;
+           auto initialVertex2 = (face[(j + 1) % vcount]) - 1;
+
+           vector<float> vertex1 = vertices[initialVertex1];
+           vector<float> vertex2 = vertices[initialVertex2];
+            int x1 = round((vertex1[0] * scale[0]) + translate[0]);
+            int y1 = round((vertex1[1] * scale[1]) + translate[1]);
+            int x2 = round((vertex2[0] * scale[0]) + translate[0]);
+            int y2 = round((vertex2[1] * scale[1]) + translate[1]);
+
+            glLine(x1, y1, x2, y2);
+        }
+    }
+}
+
+void Render::setIsPixels(bool isPixels)
+{
+    this->isPixels = isPixels;
 }

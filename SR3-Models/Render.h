@@ -14,6 +14,7 @@ class Render {
 private:
     unsigned char backgroundColor[3];
     unsigned char pointColor[3];
+    bool isPixels;
     int width;
     int height;
     string *filename;
@@ -35,12 +36,12 @@ public:
     void glFinish(char *filename);
     void glClearColor(int r, int g, int b);
     void glColor(int r, int g, int b);
-
     void glCreateWindow(int width, int height);
     void glViewPort(int x, int y, int width, int height);
     void glVertex(int x, int y);
-    void glLine(int x1, int y1, int x2, int y2);
-
+    void glLine(int &x1, int &y1, int &x2, int &y2);
+    void load(string filename, vector<double> translate, vector<double> scale);
+    void setIsPixels(bool isPixels);
 };
 
 
