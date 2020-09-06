@@ -1,5 +1,5 @@
 //
-// Created by Amado Garcia on 9/1/20.
+// Created by Amado Garcia on 9/4/20.
 //
 
 #include "Obj.h"
@@ -37,7 +37,7 @@ void Obj::read()
 
         if(prefix == "v")
         {
-            vector<float> vertex{};
+            vector<double> vertex{};
             string value;
             for(auto v: values)
             {
@@ -100,7 +100,7 @@ void Obj::read()
 //        cout<<"\n";
 //    }
 }
-vector<vector<float>> Obj::getVertices()
+vector<vector<double>> Obj::getVertices()
 {
     return this->vertices;
 }
@@ -108,3 +108,4 @@ vector<vector<int>> Obj::getFaces()
 {
     return this->faces;
 }
+

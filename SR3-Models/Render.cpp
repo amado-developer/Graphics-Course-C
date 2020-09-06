@@ -46,40 +46,65 @@ vector<unsigned char> Render::infoHeader()
 }
 void Render::glPoint(int x, int y) {
 //    cout<<x<<","<<y<<endl;
-    if(x >= 0 && y >= 0 && x <= width && y <= height && x <= (vW + vX) && y <= (vH + vY))
+    if(x >= 0 && y >= 0 && x < width && y < height && x < (vW + vX) && y < (vH + vY))
     {
         framebuffer[x][y][0] = pointColor[0];
         framebuffer[x][y][1] = pointColor[1];
         framebuffer[x][y][2] = pointColor[2];
     }
 }
-void Render::glClear() {
-    for (int i = 0; i < height; i++){
-        for (int j = 0; j < width; j++){
-            for (int k = 0; k < 3; k++){
-                framebuffer[j][i][k] = (unsigned char)backgroundColor[k];
+void Render::glClear(bool isAllWindow)
+{
+    if(!isAllWindow)
+    {
+        for (int i = vY; i < (vY + vH); i++)
+        {
+            for (int j = vX; j < (vX + vW); j++)
+            {
+                for (int k = 0; k < 3; k++)
+                {
+                    framebuffer[j][i][k] = (unsigned char)backgroundColor[k];
+                }
+            }
+        }
+    }
+    else
+    {
+        for (int i = 0; i < height; i++)
+        {
+            for (int j = 0; j < width; j++)
+            {
+                for (int k = 0; k < 3; k++)
+                {
+                    framebuffer[j][i][k] = (unsigned char)backgroundColor[k];
+                }
             }
         }
     }
 }
-void Render::glColor(int r, int g, int b){
+
+void Render::glColor(int r, int g, int b)
+{
     pointColor[2] = (unsigned char) (r * 255);
     pointColor[1] = (unsigned char) (g * 255);
     pointColor[0] = (unsigned char) (b * 255);
 }
-void Render::glClearColor(int r, int g, int b){
+void Render::glClearColor(int r, int g, int b)
+{
     backgroundColor[2] = (unsigned char) (r * 255);
     backgroundColor[1] = (unsigned char) (g * 255);
     backgroundColor[0] = (unsigned char) (b * 255);
 
 }
-void Render::glCreateWindow(int width, int height){
+void Render::glCreateWindow(int width, int height)
+{
     vector<vector<vector<unsigned char>>>framebuffer(width, vector<vector<unsigned char >>(height, vector<unsigned char >(3)));
     this->framebuffer = framebuffer;
     this->width = width;
     this->height = height;
 }
-void Render::glViewPort(int vX, int vY, int vW, int vH){
+void Render::glViewPort(int vX, int vY, int vW, int vH)
+{
     this->vX = vX;
     this->vY = vY;
     this->vW = vW;
