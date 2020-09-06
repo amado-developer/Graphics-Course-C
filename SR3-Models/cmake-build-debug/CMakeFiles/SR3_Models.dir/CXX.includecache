@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Obj.h
+vector
+-
+string
+-
+
+/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Render.h
+vector
+-
+string
+-
+
+/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/main.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+math.h
+-
+Render.h
+/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Render.h
+Obj.h
+/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Obj.h
+

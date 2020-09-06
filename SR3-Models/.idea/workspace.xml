@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="SR3_Models" targetName="SR3_Models" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bbb4af8e-71bc-476a-a24c-41290e1675d7" name="Default Changelist" comment="SR3 with viewport done">
+      <change beforePath="$PROJECT_DIR$/Obj.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Obj.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Render.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Render.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Render.h" beforeDir="false" afterPath="$PROJECT_DIR$/Render.h" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1gwEYRytYezA8RCPlBoV85kyJV7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SR3_Models" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SR3_Models" TARGET_NAME="SR3_Models" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SR3_Models" RUN_TARGET_NAME="SR3_Models">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bbb4af8e-71bc-476a-a24c-41290e1675d7" name="Default Changelist" comment="" />
+      <created>1599017302129</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599017302129</updated>
+      <workItem from="1599017303347" duration="8261000" />
+      <workItem from="1599059407903" duration="8000" />
+      <workItem from="1599059420540" duration="6000" />
+      <workItem from="1599059444848" duration="11597000" />
+      <workItem from="1599096517719" duration="1204000" />
+      <workItem from="1599100759578" duration="1262000" />
+      <workItem from="1599254016080" duration="1922000" />
+      <workItem from="1599268624814" duration="4789000" />
+    </task>
+    <task id="LOCAL-00001" summary="Made the read function for the .obj">
+      <created>1599026344650</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599026344650</updated>
+    </task>
+    <task id="LOCAL-00002" summary="SR3 with viewport done">
+      <created>1599256380741</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599256380741</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Made the read function for the .obj" />
+    <MESSAGE value="SR3 with viewport done" />
+    <option name="LAST_COMMIT_MESSAGE" value="SR3 with viewport done" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="439" height="466" key="DebuggerActiveHint" timestamp="1599101584044">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="439" height="466" key="DebuggerActiveHint/0.0.1792.1120@0.0.1792.1120" timestamp="1599101584044" />
+    <state width="1750" height="392" key="GridCell.Tab.0.bottom" timestamp="1599276999967">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="392" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1599276999967" />
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1599094740151" />
+    <state width="1750" height="392" key="GridCell.Tab.0.center" timestamp="1599276999966">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="392" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1599276999966" />
+    <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1042@0.23.1792.1042" timestamp="1599094740150" />
+    <state width="1750" height="392" key="GridCell.Tab.0.left" timestamp="1599276999965">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="392" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1599276999965" />
+    <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1042@0.23.1792.1042" timestamp="1599094740149" />
+    <state width="1750" height="392" key="GridCell.Tab.0.right" timestamp="1599276999967">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="392" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1599276999967" />
+    <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1042@0.23.1792.1042" timestamp="1599094740151" />
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom" timestamp="1599276999969">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1599276999969" />
+    <state width="1750" height="392" key="GridCell.Tab.1.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1599026802501" />
+    <state width="1750" height="392" key="GridCell.Tab.1.center" timestamp="1599276999968">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="392" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1599276999968" />
+    <state width="1750" height="392" key="GridCell.Tab.1.center/0.23.1792.1042@0.23.1792.1042" timestamp="1599026802501" />
+    <state width="1750" height="392" key="GridCell.Tab.1.left" timestamp="1599276999968">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="392" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1599276999968" />
+    <state width="1750" height="392" key="GridCell.Tab.1.left/0.23.1792.1042@0.23.1792.1042" timestamp="1599026802500" />
+    <state width="1750" height="392" key="GridCell.Tab.1.right" timestamp="1599276999968">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="392" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1599276999968" />
+    <state width="1750" height="392" key="GridCell.Tab.1.right/0.23.1792.1042@0.23.1792.1042" timestamp="1599026802501" />
+    <state x="496" y="300" key="Vcs.Push.Dialog.v2" timestamp="1599256384567">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="496" y="300" key="Vcs.Push.Dialog.v2/0.0.1792.1120@0.0.1792.1120" timestamp="1599256384567" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1599022428628">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1599022428628" />
+  </component>
+</project>
