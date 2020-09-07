@@ -1,2 +1,2 @@
-# Graphics-Course-C
-Graphic's course in C++
+# GraphicsCourse-SimpleRenderer-C
+Simple Renderer in c++
