@@ -12,7 +12,7 @@ int main() {
     r.glClear(false);
 //    r.glColor(1, 1, 1);
     r.setIsPixels(true);
-    r.load("model.obj", {300, 300, 0}, {300, 300, 0});
+    r.load("model.obj", {300.0, 300.0, 0.0}, {300.0, 300.0, 0.0});
     r.glFinish("out.bmp");
     return 0;
 }

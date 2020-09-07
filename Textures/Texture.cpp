@@ -23,15 +23,16 @@ void Texture::read()
     int i;
     FILE* f = fopen("model.bmp", "rb");
     unsigned char info[54];
-    fread(info, sizeof(unsigned char), 54, f); // read the 54-byte header
+    fread(info, sizeof(unsigned char), 54, f);
 
-    // extract image height and width from header
+
+    int headerSize = *(int*)&info[10];
     int width = *(int*)&info[18];
     int height = *(int*)&info[22];
 
     this->widht = width;
     this->height = height;
-
+    fseek(f, headerSize, SEEK_SET);
     int size = 3 * width * height;
     vector<vector<vector<double>>>pixels(width, vector<vector<double>>(height, vector<double >(3)));
     this->pixels = pixels;
@@ -63,10 +64,7 @@ void Texture::read()
         this->pixels[y][x][0] = (b / 255.0);
         this->pixels[y][x][1] = (g / 255.0);
         this->pixels[y][x][2] = (r / 255.0);
-
-//        cout<<(r/ 255.0)<<" "<<(g/255.0)<<" "<<(b/255.0)<<endl;
         ++x;
-
     }
     fclose(f);
 }

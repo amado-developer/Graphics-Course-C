@@ -303,22 +303,16 @@ void Render::glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<in
             double tX{get<0>(tA) * u + get<0>(tB) * v + get<0>(tC) * w};
             double tY{get<1>(tA) * u + get<1>(tB) * v + get<1>(tC) * w};
 
-//            cout<<get<0>(tA)<<" "<<" " << get<0>(tB)<<" "<< get<0>(tC)<<endl;
-            cout<< tX<<" "<<tY<<endl;
 
             auto color = texture.getColor(tX, tY);
-
-
             double b = 1 * intensity;
             double r = 1 * intensity;
             double g = 1 * intensity;
 
-            double b1 = b  * color[0];
-            double r1 = r  * color[1];
-            double g1 = g  * color[2];
+            double b1 = b  * color[2];
+            double r1 = r  * color[0];
+            double g1 = g  * color[1];
 
-
-//            cout<<r1<<" "<<g1<<" "<<b1<<endl;
             this->glColor(r1,g1, b1);
             if( x < width && y < height && z > zbuffer[x][y])
             {

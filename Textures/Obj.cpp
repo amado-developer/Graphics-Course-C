@@ -104,7 +104,7 @@ void Obj::read()
             {
                 int delimeter = f.find("/");
                 string value = f.substr(0, delimeter);
-                string tValue = f.substr(delimeter + 1, f.find("/") + 1);
+                string tValue = f.substr(delimeter + 1, f.find("/") + 3);
                 if(value !="")
                     facePosition1.push_back(stoi(value));
                 if(tValue !="")
