@@ -60,9 +60,11 @@ void Texture::read()
         fread(data3, sizeof(unsigned char), 1, f);
         int b = data3[0];
 
-        this->pixels[y][x][0] = b;
-        this->pixels[y][x][1] = g;
-        this->pixels[y][x][2] = r;
+        this->pixels[y][x][0] = (b / 255.0);
+        this->pixels[y][x][1] = (g / 255.0);
+        this->pixels[y][x][2] = (r / 255.0);
+
+//        cout<<(r/ 255.0)<<" "<<(g/255.0)<<" "<<(b/255.0)<<endl;
         ++x;
 
     }

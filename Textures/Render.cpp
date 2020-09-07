@@ -243,9 +243,9 @@ tuple<double, double, double> Render::barycentric(tuple<double, double, double> 
 
     double u = cX / cZ;
     double v = cY / cZ;
-    double w = 1 - ((cX/cZ) + (cY / cZ));
+    double w = 1 - ((cX + cY) / cZ);
 
-    return make_tuple(u, v, w);
+    return make_tuple(w, u, v);
 }
 vector<int> Render::bbox(int quantity, ...)
 {
@@ -282,6 +282,7 @@ void Render::glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<in
     int xMax = bbox.at(2);
     int yMax = bbox.at(3);
 
+//    cout<<xMin<<" "<<yMin<<" "<<xMax<<" "<<yMax<<endl;
     for(auto x{xMin}; x <= xMax; ++x)
     {
         for(auto y{yMin}; y <= yMax; ++y)
@@ -289,27 +290,36 @@ void Render::glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<in
             tuple<double, double> P{make_tuple(x,y)};
             tuple<double, double, double> barycentric  = this->barycentric(A, B, C, P);
 
-            double w = get<0>(barycentric);
+            double u = get<0>(barycentric);
             double v = get<1>(barycentric);
-            double u = get<2>(barycentric);
-            cout<<u<<" "<<v<<" "<<w<<endl;
+            double w = get<2>(barycentric);
+
             if(w < 0 || v < 0 || u < 0)
             {
                 continue;
             }
 
-            //u w v THIS
-            //u v w
-            double z{get<2>(A)   * u + get<2>(B)  * w + get<2>(C) * v};
-            double tX{get<0>(tA) * u + get<0>(tB) * w + get<0>(tC) * v};
-            double tY{get<1>(tA) * u + get<1>(tB) * w + get<1>(tC) * v};
-            auto color = texture.getColor(tX, tY);
-            double b = color[0] / 255.0 * intensity;
-            double r = color[1] / 255.0 * intensity;
-            double g = color[2] / 255.0 * intensity;
+            double z{get<2>(A)   * u + get<2>(B)  * v + get<2>(C) * w};
+            double tX{get<0>(tA) * u + get<0>(tB) * v + get<0>(tC) * w};
+            double tY{get<1>(tA) * u + get<1>(tB) * v + get<1>(tC) * w};
 
-//            cout<<r<<" "<<g<<" "<<b<<endl;
-            this->glColor(r,g, b);
+//            cout<<get<0>(tA)<<" "<<" " << get<0>(tB)<<" "<< get<0>(tC)<<endl;
+            cout<< tX<<" "<<tY<<endl;
+
+            auto color = texture.getColor(tX, tY);
+
+
+            double b = 1 * intensity;
+            double r = 1 * intensity;
+            double g = 1 * intensity;
+
+            double b1 = b  * color[0];
+            double r1 = r  * color[1];
+            double g1 = g  * color[2];
+
+
+//            cout<<r1<<" "<<g1<<" "<<b1<<endl;
+            this->glColor(r1,g1, b1);
             if( x < width && y < height && z > zbuffer[x][y])
             {
                 glPoint(x, y);
@@ -327,8 +337,10 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
     vector<vector<double>> vertices = o.getVertices();
     vector<tuple<vector<int>, vector<int>>> faces = o.getFaces();
     tuple<double, double, double> light{make_tuple(0,0,1)};
+
     for(auto face : faces)
     {
+
         int vcount = get<0>(face).size();
         vector<tuple<double, double, double>> vertex{};
         vector<tuple<double, double>> textureVertex{};
@@ -355,6 +367,9 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
             tuple<double, double> tA{textureVertex.at(0)};
             tuple<double, double> tB{textureVertex.at(1)};
             tuple<double, double> tC{textureVertex.at(2)};
+
+//            cout<<"X: "<<get<0>(tA) <<" " << "Y: " << get<1>(tA) <<" "<<"X: "<<get<0>(tB) << "Y: " << get<1>(tB)
+//                    <<" "<<"X: "<<get<0>(tC) << "Y: " << get<1>(tC)<<endl;
 
             tuple<double, double, double> normal {math.cross(math.sub(B, A), math.sub(C,A))};
             double intensity{math.dot(math.norm(normal),math.norm(light))};
