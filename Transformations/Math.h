@@ -9,6 +9,7 @@
 using namespace std;
 class Math
 {
+
     public:
         tuple<int, int, int> sum(tuple<int, int, int> v0, tuple<int, int, int> v1);
         tuple<double, double, double> sub(tuple<double, double, double> v0, tuple<double, double, double> v1);
@@ -20,8 +21,13 @@ class Math
         double degreeToRadian(double degree);
         vector<vector<double>> matrixMult(vector<vector<double>> matrixA, vector<vector<double>> matrixB);
         vector<vector<double>> oneDimensionMatrixMult(vector<vector<double>> matrixA, vector<vector<double>> matrixB);
-        //https://www.tutorialspoint.com/cplusplus-program-to-find-inverse-of-a-graph-matrix#:~:text=Begin%20function%20INV()%20to,%2F%20DET(matrix)%20End.
-
+        vector<vector<double>> transposedMatrix(vector<vector<double>> matrix);
+        vector<vector<double>> adjacencyMatrix(vector<vector<double>> matrix, int i, int j);
+        double sarrus(vector<vector<double>> matrix);
+        double determinant(vector<vector<double>> matrix);
+        vector<vector<double>> adjacencyCalculator(vector<vector<double>> matrix);
+        vector<vector<double>> inverseMatrix(vector<vector<double>> matrix);
+        vector<double> vectorMatrixMult(vector<double> vectorA, vector<vector<double>> matrixB);
 };
 
 #endif //SHADERS_MATH_H
