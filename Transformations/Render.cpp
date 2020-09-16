@@ -76,7 +76,7 @@ void Render::glClear(bool isAllWindow)
         {
             for (int j = vX; j < (vX + vW); j++)
             {
-                zbuffer[j][i] = -INFINITY;
+                zbuffer[j][i] = INFINITY;
             }
         }
     }
@@ -112,6 +112,7 @@ void Render::setActiveRender(vector<double>(*activeShader)
 }
 void Render::glColor(double r, double g, double b)
 {
+//    cout<<"r "<<r*255.0<<"g "<<g*255.0<<" b "<<b*255.0<<endl;
     pointColor[2] = (unsigned char) (r * 255.0);
     pointColor[1] = (unsigned char) (g * 255.0);
     pointColor[0] = (unsigned char) (b * 255.0);
@@ -141,8 +142,8 @@ void Render::glViewPort(int vX, int vY, int vW, int vH)
     {
         {vW / 2.0, 0.0, 0.0, vX + vW / 2.0},
         {0.0, vH/2.0, 0.0, vY + vH/2.0},
-        {0,0,0.5, 0.5},
-        {0,0,0,1}
+        {0.0,0.0,0.5, 0.5},
+        {0.0,0.0,0.0,1.0}
     };
     this->viewportMatrix = matrix;
     int i{0};
@@ -262,42 +263,42 @@ tuple<double, double, double> Render::barycentric(tuple<double, double, double> 
 
     return make_tuple(w, u, v);
 }
-vector<int> Render::bbox(int quantity, ...)
+vector<double> Render::bbox(double quantity, ...)
 {
     va_list args;
     va_start(args, quantity);
-    vector<int> xs{};
-    vector<int> ys{};
+    vector<double> xs{};
+    vector<double> ys{};
     for(auto i {0}; i < (quantity/2); ++i)
     {
-        int xValue = va_arg(args, int);
+        double xValue = va_arg(args, double);
         xs.push_back(abs(xValue));
 
-        int yValue = va_arg(args, int);
+        double yValue = va_arg(args, double);
         ys.push_back(abs(yValue));
     }
     sort(xs.begin(), xs.end());
     sort(ys.begin(), ys.end());
 
-    int xMin = xs[0];
-    int yMin = ys[0];
-    int xMax = xs[xs.size() - 1];
-    int yMax = ys[ys.size() - 1];
+    double xMin = xs[0];
+    double yMin = ys[0];
+    double xMax = xs[xs.size() - 1];
+    double yMax = ys[ys.size() - 1];
 
-    vector<int> bbox{xMin, yMin, xMax, yMax};
+    vector<double> bbox{xMin, yMin, xMax, yMax};
 
     return bbox;
 }
-void Render::glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<int, int, int> C,
+void Render::glTriangle(tuple<double, double, double> A, tuple<double, double, double> B, tuple<double, double, double> C,
                         tuple<double, double> tA, tuple<double, double> tB, tuple<double, double> tC,
                         tuple<double, double, double> nA, tuple<double, double, double> nB,
                         tuple<double, double, double> nC)
 {
-    vector<int> bbox = this->bbox(6, get<0>(A),get<1>(A),  get<0>(B), get<1>(B), get<0>(C), get<1>(C));
-    int xMin = bbox.at(0);
-    int yMin = bbox.at(1);
-    int xMax = bbox.at(2);
-    int yMax = bbox.at(3);
+    vector<double> bbox = this->bbox(6, get<0>(A),get<1>(A),  get<0>(B), get<1>(B), get<0>(C), get<1>(C));
+    double xMin = round(bbox.at(0));
+    double yMin = round(bbox.at(1));
+    double xMax = round(bbox.at(2));
+    double yMax = round(bbox.at(3));
 
     for(auto x{xMin}; x <= xMax; ++x)
     {
@@ -311,6 +312,7 @@ void Render::glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<in
             tuple<double, double> P{make_tuple(x,y)};
             tuple<double, double, double> barycentric  = this->barycentric(A, B, C, P);
 
+
             double u = get<0>(barycentric);
             double v = get<1>(barycentric);
             double w = get<2>(barycentric);
@@ -322,12 +324,16 @@ void Render::glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<in
 
             double z{get<2>(A)   * u + get<2>(B)  * v + get<2>(C) * w};
 
-            vector<double> color = this->activeShader(u, v, w, tA, tB, tC, nA, nB, nC,this->texture, this->light);
-            if( x < width && y < height && z > zbuffer[y][x])
+            if( z < zbuffer[x][y] && z<=1 && z>=-1)
             {
+                vector<double> color = this->activeShader(u, v, w, tA, tB, tC, nA, nB, nC,this->texture, this->light);
+//                cout<<color[0] * 255<<" "<<color[1] * 255<<" "<<color[2] * 255<<endl;
+
+
+//                cout<<color.at(0)<<" "<<color.at(1)<<" " <<
                 this->glColor(color.at(0), color.at(1), color.at(2));
                 glPoint(x, y);
-                zbuffer[y][x] = z;
+                zbuffer[x][y] = z;
             }
 
         }
@@ -381,6 +387,8 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
             B = transform(B, modelMatrix);
             C = transform(C, modelMatrix);
 
+
+
             tuple<double, double> tA{textureVertex.at(0)};
             tuple<double, double> tB{textureVertex.at(1)};
             tuple<double, double> tC{textureVertex.at(2)};
@@ -389,13 +397,6 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
             tuple<double, double, double> nB{directionTransform(normalVertex.at(1), rotationMatrix)};
             tuple<double, double, double> nC{directionTransform(normalVertex.at(2), rotationMatrix)};
 
-            tuple<double, double, double> normal {math.cross(math.sub(B, A), math.sub(C,A))};
-            double intensity{math.dot(math.norm(normal),math.norm(light))};
-
-            if(intensity < 0)
-            {
-                continue;
-            }
 
             glTriangle(A, B, C, tA, tB, tC, nA, nB, nC);
         }
@@ -422,12 +423,7 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
             tuple<double, double, double> nD{directionTransform(normalVertex.at(3), rotationMatrix)};
 
             tuple<double, double, double> normal {math.cross(math.sub(B, A), math.sub(C,A))};
-            double intensity{math.dot(math.norm(normal),math.norm(light))};
 
-            if(intensity < 0)
-            {
-                continue;
-            }
             glTriangle(A, B, C, tA, tB, tC, nA, nB, nC);
             glTriangle(A, C, D, tA, tC, tD, nA, nC, nD);
         }

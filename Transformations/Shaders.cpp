@@ -24,7 +24,10 @@ vector<double> Shaders::gourad(double &u, double &v, double &w,
 
     tuple<double, double, double> normal{nX, nY, nZ};
     double intensity{math.dot(math.norm(normal),math.norm(light))};
-
+    if(intensity < 0)
+    {
+        return {0.0,0.0,0.0};
+    }
     double b = 1 * intensity;
     double r = 1 * intensity;
     double g = 1 * intensity;
@@ -35,11 +38,7 @@ vector<double> Shaders::gourad(double &u, double &v, double &w,
     double g1 = g  * color[1];
     double r1 = r  * color[0];
 
-
-    if(intensity > 0.0)
-        return {r1, g1, b1};
-    else
-        return {0.0, 0.0, 0.0};
+    return {r1, g1, b1};
 }
 
 vector<double> Shaders::toon(double &u, double &v, double &w,
@@ -59,7 +58,7 @@ vector<double> Shaders::toon(double &u, double &v, double &w,
     double nZ = get<2>(nA) * u + get<2>(nB) * v + get<2>(nC) * w;
 
     tuple<double, double, double> normal{nX, nY, nZ};
-    double intensity{math.dot(normal,light)};
+    double intensity{math.dot(math.norm(normal),math.norm(light))};
 
     if(intensity > 0)
     {

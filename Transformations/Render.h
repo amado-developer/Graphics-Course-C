@@ -23,7 +23,7 @@ class Render
         int vY;
         int vW;
         int vH;
-        vector<int> bbox(int quantity, ...);
+//        vector<double> bbox(int quantity, ...);
         std::vector<unsigned char> fileHeader();
         std::vector<unsigned char> infoHeader();
         vector<vector<vector<unsigned char>>> framebuffer;
@@ -66,9 +66,9 @@ class Render
                  tuple<double, double> &tA, tuple<double, double> &tB, tuple<double, double> &tC,
                  tuple<double, double, double> &nA, tuple<double, double, double> &nB, tuple<double, double, double> &nC,
                  Texture &texture, tuple<double, double, double> &light));
-        void glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<int, int, int> C, tuple<double, double> tA,
-                    tuple<double, double> tB, tuple<double, double> tC, tuple<double, double, double> nA,
-                    tuple<double, double, double> nB, tuple<double, double, double> nC);
+//        void glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<int, int, int> C, tuple<double, double> tA,
+//                    tuple<double, double> tB, tuple<double, double> tC, tuple<double, double, double> nA,
+//                    tuple<double, double, double> nB, tuple<double, double, double> nC);
         tuple<double, double, double>
         transform(tuple<double, double, double> vertex, vector<vector<double>> viewMatrix);
         tuple<double, double, double> directionTransform(tuple<double, double, double> vertex, vector<vector<double>> viewMatrix);
@@ -77,6 +77,13 @@ class Render
         void createProjectionMatrix(double n, double f, double fov);
         vector<vector<double>> createObjectMatrix(vector<double> translate,  vector<double> rotate={0,0,0}, vector<double> scale={1,1,1});
         vector<vector<double>> createRotationMatrix(vector<double> rotate);
+
+        void glTriangle(tuple<double, double, double> A, tuple<double, double, double> B, tuple<double, double, double> C,
+                    tuple<double, double> tA, tuple<double, double> tB, tuple<double, double> tC,
+                    tuple<double, double, double> nA, tuple<double, double, double> nB,
+                    tuple<double, double, double> nC);
+
+        vector<double> bbox(double quantity, ...);
 };
 
 

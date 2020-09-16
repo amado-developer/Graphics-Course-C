@@ -53,13 +53,13 @@ void Texture::read()
         }
         unsigned char data[1];
         fread(data, sizeof(unsigned char), 1, f);
-        int r = data[0];
+        double r = data[0];
         unsigned char data2[1];
         fread(data2, sizeof(unsigned char), 1, f);
-        int g = data2[0];
+        double g = data2[0];
         unsigned char data3[1];
         fread(data3, sizeof(unsigned char), 1, f);
-        int b = data3[0];
+        double b = data3[0];
 
         this->pixels[y][x][0] = (b / 255.0);
         this->pixels[y][x][1] = (g / 255.0);
@@ -72,8 +72,8 @@ vector<double> Texture::getColor(double tx, double ty)
 {
     if(tx >= 0 && tx <= 1 && ty >= 0 && ty <= 1)
     {
-        int x = tx * this->widht;
-        int y = ty * this->height;
+        int x = tx * this->widht - 1;
+        int y = ty * this->height - 1;
         return this->pixels[y][x];
     }
     else
