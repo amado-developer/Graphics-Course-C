@@ -157,7 +157,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Shaders
+CMAKE_PROJECT_NAME:STATIC=Transformations
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -229,6 +229,12 @@ Shaders_BINARY_DIR:STATIC=/Users/amado-developer/College/Graphics/GraphicsCourse
 
 //Value Computed by CMake
 Shaders_SOURCE_DIR:STATIC=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Shaders
+
+//Value Computed by CMake
+Transformations_BINARY_DIR:STATIC=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Shaders/cmake-build-debug
+
+//Value Computed by CMake
+Transformations_SOURCE_DIR:STATIC=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Shaders
 
 
 ########################

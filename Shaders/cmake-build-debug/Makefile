@@ -131,17 +131,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Shaders
+# Target rules for targets named Transformations
 
 # Build rule for target.
-Shaders: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Shaders
-.PHONY : Shaders
+Transformations: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Transformations
+.PHONY : Transformations
 
 # fast build rule for target.
-Shaders/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/build
-.PHONY : Shaders/fast
+Transformations/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/build
+.PHONY : Transformations/fast
 
 Math.o: Math.cpp.o
 
@@ -149,7 +149,7 @@ Math.o: Math.cpp.o
 
 # target to build an object file
 Math.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Math.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Math.cpp.o
 .PHONY : Math.cpp.o
 
 Math.i: Math.cpp.i
@@ -158,7 +158,7 @@ Math.i: Math.cpp.i
 
 # target to preprocess a source file
 Math.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Math.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Math.cpp.i
 .PHONY : Math.cpp.i
 
 Math.s: Math.cpp.s
@@ -167,7 +167,7 @@ Math.s: Math.cpp.s
 
 # target to generate assembly for a file
 Math.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Math.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Math.cpp.s
 .PHONY : Math.cpp.s
 
 Obj.o: Obj.cpp.o
@@ -176,7 +176,7 @@ Obj.o: Obj.cpp.o
 
 # target to build an object file
 Obj.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Obj.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Obj.cpp.o
 .PHONY : Obj.cpp.o
 
 Obj.i: Obj.cpp.i
@@ -185,7 +185,7 @@ Obj.i: Obj.cpp.i
 
 # target to preprocess a source file
 Obj.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Obj.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Obj.cpp.i
 .PHONY : Obj.cpp.i
 
 Obj.s: Obj.cpp.s
@@ -194,7 +194,7 @@ Obj.s: Obj.cpp.s
 
 # target to generate assembly for a file
 Obj.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Obj.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Obj.cpp.s
 .PHONY : Obj.cpp.s
 
 Render.o: Render.cpp.o
@@ -203,7 +203,7 @@ Render.o: Render.cpp.o
 
 # target to build an object file
 Render.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Render.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Render.cpp.o
 .PHONY : Render.cpp.o
 
 Render.i: Render.cpp.i
@@ -212,7 +212,7 @@ Render.i: Render.cpp.i
 
 # target to preprocess a source file
 Render.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Render.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Render.cpp.i
 .PHONY : Render.cpp.i
 
 Render.s: Render.cpp.s
@@ -221,7 +221,7 @@ Render.s: Render.cpp.s
 
 # target to generate assembly for a file
 Render.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Render.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Render.cpp.s
 .PHONY : Render.cpp.s
 
 Shaders.o: Shaders.cpp.o
@@ -230,7 +230,7 @@ Shaders.o: Shaders.cpp.o
 
 # target to build an object file
 Shaders.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Shaders.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Shaders.cpp.o
 .PHONY : Shaders.cpp.o
 
 Shaders.i: Shaders.cpp.i
@@ -239,7 +239,7 @@ Shaders.i: Shaders.cpp.i
 
 # target to preprocess a source file
 Shaders.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Shaders.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Shaders.cpp.i
 .PHONY : Shaders.cpp.i
 
 Shaders.s: Shaders.cpp.s
@@ -248,7 +248,7 @@ Shaders.s: Shaders.cpp.s
 
 # target to generate assembly for a file
 Shaders.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Shaders.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Shaders.cpp.s
 .PHONY : Shaders.cpp.s
 
 Texture.o: Texture.cpp.o
@@ -257,7 +257,7 @@ Texture.o: Texture.cpp.o
 
 # target to build an object file
 Texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Texture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Texture.cpp.o
 .PHONY : Texture.cpp.o
 
 Texture.i: Texture.cpp.i
@@ -266,7 +266,7 @@ Texture.i: Texture.cpp.i
 
 # target to preprocess a source file
 Texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Texture.cpp.i
 .PHONY : Texture.cpp.i
 
 Texture.s: Texture.cpp.s
@@ -275,7 +275,7 @@ Texture.s: Texture.cpp.s
 
 # target to generate assembly for a file
 Texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/Texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/Texture.cpp.s
 .PHONY : Texture.cpp.s
 
 main.o: main.cpp.o
@@ -284,7 +284,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -293,7 +293,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -302,7 +302,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -313,7 +313,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Shaders"
+	@echo "... Transformations"
 	@echo "... Math.o"
 	@echo "... Math.i"
 	@echo "... Math.s"

@@ -149,12 +149,10 @@ vector<vector<double>> Obj::getVertices()
 {
     return this->vertices;
 }
-
 vector<vector<double>> Obj::getTextureVertexes()
 {
     return this->textureVertexes;
 }
-
 vector<vector<double>> Obj:: getNormalVertexes()
 {
     return this -> normalVertexes;

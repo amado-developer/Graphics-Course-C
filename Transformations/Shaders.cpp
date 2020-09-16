@@ -15,17 +15,15 @@ vector<double> Shaders::gourad(double &u, double &v, double &w,
 {
     Math math;
 
-
     double tX = get<0>(tA) * u + get<0>(tB) * v + get<0>(tC) * w;
     double tY = get<1>(tA) * u + get<1>(tB) * v + get<1>(tC) * w;
-
 
     double nX = get<0>(nA) * u + get<0>(nB) * v + get<0>(nC) * w;
     double nY = get<1>(nA) * u + get<1>(nB) * v + get<1>(nC) * w;
     double nZ = get<2>(nA) * u + get<2>(nB) * v + get<2>(nC) * w;
 
     tuple<double, double, double> normal{nX, nY, nZ};
-    double intensity{math.dot(normal,light)};
+    double intensity{math.dot(math.norm(normal),math.norm(light))};
 
     double b = 1 * intensity;
     double r = 1 * intensity;
@@ -39,9 +37,7 @@ vector<double> Shaders::gourad(double &u, double &v, double &w,
 
 
     if(intensity > 0.0)
-    {
         return {r1, g1, b1};
-    }
     else
         return {0.0, 0.0, 0.0};
 }

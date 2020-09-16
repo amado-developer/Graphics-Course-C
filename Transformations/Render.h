@@ -40,6 +40,9 @@ class Render
                                       tuple<double, double> &tA, tuple<double, double> &tB, tuple<double, double> &tC,
                                       tuple<double, double, double> &nA, tuple<double, double, double> &nB, tuple<double, double, double> &nC,
                                       Texture &texture, tuple<double, double, double> &light);
+        vector<vector<double>> viewMatrix;
+        vector<vector<double>> projectionMatrix;
+        vector<vector<double>> viewportMatrix;
 
     public:
         int counter = 1;
@@ -53,7 +56,7 @@ class Render
         void glViewPort(int x, int y, int width, int height);
         void glVertex(int x, int y);
         void glLine(int &x1, int &y1, int &x2, int &y2);
-        void load(string filename, vector<double> translate, vector<double> scale);
+        void load(string filename, vector<double> translate, vector<double> scale, vector<double> rotate);
         void setIsPixels(bool isPixels);
         Texture getTexture();
         tuple<double, double, double> getLight();
@@ -66,10 +69,14 @@ class Render
         void glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<int, int, int> C, tuple<double, double> tA,
                     tuple<double, double> tB, tuple<double, double> tC, tuple<double, double, double> nA,
                     tuple<double, double, double> nB, tuple<double, double, double> nC);
-
-
-    tuple<double, double, double>
-    transform(tuple<double, double, double> vertex, vector<double> translate, vector<double> scale);
+        tuple<double, double, double>
+        transform(tuple<double, double, double> vertex, vector<vector<double>> viewMatrix);
+        tuple<double, double, double> directionTransform(tuple<double, double, double> vertex, vector<vector<double>> viewMatrix);
+        void createViewMatrix(tuple<double, double, double> cameraPosition, tuple<double, double, double> cameraRotation);
+        void lookAt(tuple<double, double, double> eye, tuple<double, double, double> cameraPosition);
+        void createProjectionMatrix(double n, double f, double fov);
+        vector<vector<double>> createObjectMatrix(vector<double> translate,  vector<double> rotate={0,0,0}, vector<double> scale={1,1,1});
+        vector<vector<double>> createRotationMatrix(vector<double> rotate);
 };
 
 

@@ -42,15 +42,15 @@ tuple<double, double, double>Math:: norm(tuple<double, double, double> v0)
 }
 tuple<double, double, double> Math::cross(tuple<double, double, double> v1, tuple<double, double, double> v2)
 {
-    int v1X = get<0>(v1);
-    int v1Y = get<1>(v1);
-    int v1Z = get<2>(v1);
+    double v1X = get<0>(v1);
+    double v1Y = get<1>(v1);
+    double v1Z = get<2>(v1);
 
-    int v2X = get<0>(v2);
-    int v2Y = get<1>(v2);
-    int v2Z = get<2>(v2);
+    double v2X = get<0>(v2);
+    double v2Y = get<1>(v2);
+    double v2Z = get<2>(v2);
 
-    tuple<int, int, int> cross
+    tuple<double, double, double> cross
             {
                     make_tuple
                             (
@@ -202,5 +202,10 @@ vector<double> Math::vectorMatrixMult(vector<double> vectorA, vector<vector<doub
         vectorC.push_back(result);
     }
     return vectorC;
+}
+
+double Math::degreeToRadian(double degree)
+{
+    return (degree * M_PI)/180;
 }
 /**********************************************************************************************************************************************************/

@@ -10,7 +10,7 @@
 #include "Texture.h"
 #include <vector>
 #include <cmath>
-#include "Math.h";
+#include "Math.h"
 using namespace std;
 
 Render::Render(Texture texture) : texture(texture) {
@@ -102,7 +102,6 @@ void Render::glClear(bool isAllWindow)
         }
     }
 }
-
 void Render::setActiveRender(vector<double>(*activeShader)
         (double &u, double &v, double &w,
          tuple<double, double> &tA, tuple<double, double> &tB, tuple<double, double> &tC,
@@ -111,7 +110,6 @@ void Render::setActiveRender(vector<double>(*activeShader)
 {
      this->activeShader = activeShader;
 }
-
 void Render::glColor(double r, double g, double b)
 {
     pointColor[2] = (unsigned char) (r * 255.0);
@@ -139,6 +137,15 @@ void Render::glViewPort(int vX, int vY, int vW, int vH)
     this->vY = vY;
     this->vW = vW;
     this->vH = vH;
+    vector<vector<double>> matrix
+    {
+        {vW / 2.0, 0.0, 0.0, vX + vW / 2.0},
+        {0.0, vH/2.0, 0.0, vY + vH/2.0},
+        {0,0,0.5, 0.5},
+        {0,0,0,1}
+    };
+    this->viewportMatrix = matrix;
+    int i{0};
 }
 void Render::glVertex(int x, int y)
 {
@@ -235,7 +242,6 @@ void Render::glLine(int &x1, int &y1, int &x2, int &y2)
         }
     }
 }
-//Parameters: A, B, C
 tuple<double, double, double> Render::barycentric(tuple<double, double, double> A, tuple<double, double, double> B, tuple<double, double, double> C, tuple<double, double> P)
 {
     tuple<double, double, double> c = math.cross(make_tuple(get<0>(B) - get<0>(A), get<0>(C) - get<0>(A),get<0>(A) - get<0>(P)),
@@ -282,13 +288,10 @@ vector<int> Render::bbox(int quantity, ...)
 
     return bbox;
 }
-//Paremeters: A, B, C, Color
-
 void Render::glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<int, int, int> C,
                         tuple<double, double> tA, tuple<double, double> tB, tuple<double, double> tC,
                         tuple<double, double, double> nA, tuple<double, double, double> nB,
-                        tuple<double, double, double> nC
-                        )
+                        tuple<double, double, double> nC)
 {
     vector<int> bbox = this->bbox(6, get<0>(A),get<1>(A),  get<0>(B), get<1>(B), get<0>(C), get<1>(C));
     int xMin = bbox.at(0);
@@ -320,20 +323,23 @@ void Render::glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<in
             double z{get<2>(A)   * u + get<2>(B)  * v + get<2>(C) * w};
 
             vector<double> color = this->activeShader(u, v, w, tA, tB, tC, nA, nB, nC,this->texture, this->light);
-            if( x < width && y < height && z > zbuffer[x][y])
+            if( x < width && y < height && z > zbuffer[y][x])
             {
                 this->glColor(color.at(0), color.at(1), color.at(2));
                 glPoint(x, y);
-                zbuffer[x][y] = z;
+                zbuffer[y][x] = z;
             }
 
         }
     }
 }
-void Render::load(string filename, vector<double> translate, vector<double> scale)
+void Render::load(string filename, vector<double> translate, vector<double> scale, vector<double> rotate)
 {
     Obj o(filename);
     o.read();
+
+    vector<vector<double>> modelMatrix{createObjectMatrix(translate, rotate, scale )};
+    vector<vector<double>> rotationMatrix{createRotationMatrix(rotate)};
 
     vector<vector<double>> textureVertexes = o.getTextureVertexes();
     vector<vector<double>> vertices = o.getVertices();
@@ -342,7 +348,6 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
 
     for(auto face : faces)
     {
-
         int vcount = get<0>(face).size();
         vector<tuple<double, double, double>> vertex{};
         vector<tuple<double, double>> textureVertex{};
@@ -372,18 +377,17 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
             tuple<double, double, double> B{vertex.at(1)};
             tuple<double, double, double> C{vertex.at(2)};
 
-            A = transform(A, translate, scale);
-            B = transform(B, translate, scale);
-            C = transform(C, translate, scale);
+            A = transform(A, modelMatrix);
+            B = transform(B, modelMatrix);
+            C = transform(C, modelMatrix);
 
             tuple<double, double> tA{textureVertex.at(0)};
             tuple<double, double> tB{textureVertex.at(1)};
             tuple<double, double> tC{textureVertex.at(2)};
 
-            tuple<double, double, double> nA{normalVertex.at(0)};
-            tuple<double, double, double> nB{normalVertex.at(1)};
-            tuple<double, double, double> nC{normalVertex.at(2)};
-
+            tuple<double, double, double> nA{directionTransform(normalVertex.at(0), rotationMatrix)};
+            tuple<double, double, double> nB{directionTransform(normalVertex.at(1), rotationMatrix)};
+            tuple<double, double, double> nC{directionTransform(normalVertex.at(2), rotationMatrix)};
 
             tuple<double, double, double> normal {math.cross(math.sub(B, A), math.sub(C,A))};
             double intensity{math.dot(math.norm(normal),math.norm(light))};
@@ -395,27 +399,27 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
 
             glTriangle(A, B, C, tA, tB, tC, nA, nB, nC);
         }
-        else if(vcount == 4)
+        else if(vcount > 3)
         {
             tuple<double, double, double> A{vertex.at(0)};
             tuple<double, double, double> B{vertex.at(1)};
             tuple<double, double, double> C{vertex.at(2)};
             tuple<double, double, double> D{vertex.at(3)};
 
-            A = transform(A, translate, scale);
-            B = transform(B, translate, scale);
-            C = transform(C, translate, scale);
-            D = transform(D, translate, scale);
+            A = transform(A, modelMatrix);
+            B = transform(B, modelMatrix);
+            C = transform(C, modelMatrix);
+            D = transform(D, modelMatrix);
 
             tuple<double, double> tA{textureVertex.at(0)};
             tuple<double, double> tB{textureVertex.at(1)};
             tuple<double, double> tC{textureVertex.at(2)};
             tuple<double, double> tD{textureVertex.at(3)};
 
-            tuple<double, double, double> nA{normalVertex.at(0)};
-            tuple<double, double, double> nB{normalVertex.at(1)};
-            tuple<double, double, double> nC{normalVertex.at(2)};
-            tuple<double, double, double> nD{normalVertex.at(3)};
+            tuple<double, double, double> nA{directionTransform(normalVertex.at(0), rotationMatrix)};
+            tuple<double, double, double> nB{directionTransform(normalVertex.at(1), rotationMatrix)};
+            tuple<double, double, double> nC{directionTransform(normalVertex.at(2), rotationMatrix)};
+            tuple<double, double, double> nD{directionTransform(normalVertex.at(3), rotationMatrix)};
 
             tuple<double, double, double> normal {math.cross(math.sub(B, A), math.sub(C,A))};
             double intensity{math.dot(math.norm(normal),math.norm(light))};
@@ -429,14 +433,41 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
         }
     }
 }
-tuple<double, double, double> Render::transform(tuple<double, double, double> vertex, vector<double> translate, vector<double> scale)
+tuple<double, double, double> Render::transform(tuple<double, double, double> vertex, vector<vector<double>> viewMatrix)
 {
-    return tuple<double, double, double>
+    vector<double> augmentedVertex{get<0>(vertex), get<1>(vertex), get<2>(vertex), 1};
+    vector<vector<double>> transposedMatrix
     {
-        (round(get<0>(vertex) * scale.at(0) + translate.at(0))),
-        (round(get<1>(vertex) * scale.at(1) + translate.at(1))),
-        (round(get<2>(vertex) * scale.at(2) + translate.at(2)))
+        math.matrixMult
+        (
+                math.matrixMult
+                (
+                        math.matrixMult
+                        (
+                                this->viewportMatrix, this->projectionMatrix),
+                        this->viewMatrix),
+                                viewMatrix
+                        )
     };
+
+    vector<double> transposedVector = math.vectorMatrixMult(augmentedVertex, transposedMatrix);
+
+    return make_tuple
+    (
+            transposedVector[0] / transposedVector[3],
+            transposedVector[1] / transposedVector[3],
+            transposedVector[2] / transposedVector[3]
+    );
+}
+tuple<double, double, double> Render::directionTransform(tuple<double, double, double> vertex, vector<vector<double>> viewMatrix)
+{
+    vector<double> augmentedVertex{get<0>(vertex), get<1>(vertex), get<2>(vertex), 0};
+    vector<double> transposedVector = math.vectorMatrixMult(augmentedVertex, viewMatrix);
+    return make_tuple
+    (                 transposedVector[0],
+                      transposedVector[1],
+                      transposedVector[2]
+    );
 }
 void Render::setIsPixels(bool isPixels)
 {
@@ -467,3 +498,124 @@ Texture Render::getTexture()
 {
     return this->texture;
 }
+void Render::createViewMatrix(tuple<double, double, double> cameraPosition, tuple<double, double, double> cameraRotation)
+{
+    vector<double> cameraPositionVector{get<0>(cameraPosition), get<1>(cameraPosition), get<2>(cameraPosition)};
+    vector<double> cameraRotationVector{get<0>(cameraRotation), get<1>(cameraRotation), get<2>(cameraRotation)};
+
+    vector<vector<double>> cameraMatrix{createObjectMatrix(cameraPositionVector, cameraRotationVector)};
+    this->viewMatrix = math.inverseMatrix(cameraMatrix);
+}
+void Render::lookAt(tuple<double, double, double> eye, tuple<double, double, double> cameraPosition)
+{
+    tuple<double, double, double> forward{math.sub(cameraPosition, eye)};
+    double forwardLength{math.length(forward)};
+    get<0>(forward) /= forwardLength;
+    get<1>(forward) /= forwardLength;
+    get<2>(forward) /= forwardLength;
+
+    tuple<double, double, double> right{math.cross(make_tuple(0.0, 1.0, 0.0), forward)};
+    double rightLength{math.length(right)};
+    get<0>(right) /= rightLength;
+    get<1>(right) /= rightLength;
+    get<2>(right) /= rightLength;
+
+    tuple<double, double, double> up = math.cross(forward, right);
+    double upLength{math.length(up)};
+    get<0>(up) /= upLength;
+    get<1>(up) /= upLength;
+    get<2>(up) /= upLength;
+
+    vector<vector<double>> cameraMatrix
+    {
+        {get<0>(right), get<0>(up),  get<0>(forward),  get<0>(cameraPosition)},
+        {get<1>(right), get<1>(up),  get<1>(forward),  get<1>(cameraPosition)},
+        {get<2>(right), get<2>(up),  get<2>(forward),  get<2>(cameraPosition)},
+        {0.0,0.0,0.0,1.0}
+    };
+
+    this->viewMatrix = math.inverseMatrix(cameraMatrix);
+}
+void Render::createProjectionMatrix(double n, double f, double fov)
+{
+    double t{tan((fov * M_PI / 180.0) / 2.0) * n};
+    double r{t * this->vW / this->vH};
+    this->projectionMatrix =
+            {
+                {n / r, 0, 0, 0},
+                {0, n/t, 0, 0},
+                {0, 0, -(f+n)/ (f-n), -(2.0*f*n)/(f-n)},
+                {0, 0, -1, 0}
+            };
+//    for(auto row: projectionMatrix)
+//    {
+//        for(auto element: row)
+//        {
+//            if(element == -0)
+//            {
+//                cout<<0<<" ";
+//                continue;
+//            }
+//            cout<<element<<" ";
+//        }
+//        cout<<endl;
+//    }
+}
+vector<vector<double>> Render::createObjectMatrix
+(vector<double> translate, vector<double> rotate, vector<double> scale)
+{
+    vector<vector<double>> translateMatrix
+    {
+        {1, 0, 0, translate[0]},
+        {0, 1, 0, translate[1]},
+        {0, 0, 1, translate[2]},
+        {0, 0, 0, 1}
+    };
+
+    vector<vector<double>> scaleMatrix
+    {
+        {scale[0], 0, 0, 0},
+        {0,scale[1], 0, 0},
+        {0, 0, scale[2],0},
+        {0, 0, 0, 1}
+    };
+
+    vector<vector<double>> rotationMatrix{createRotationMatrix(rotate)};
+    return math.matrixMult(translateMatrix, math.matrixMult(rotationMatrix, scaleMatrix));
+}
+vector<vector<double>> Render::createRotationMatrix(vector<double> rotate)
+{
+    double pitch = math.degreeToRadian(rotate[0]);
+    double yaw  = math.degreeToRadian(rotate[1]);
+    double roll = math.degreeToRadian(rotate[2]);
+
+    vector<vector<double>> xRotation
+    {
+        {1, 0, 0, 0},
+        {0, cos(pitch), -sin(pitch), 0},
+        {0, sin(pitch), cos(pitch), 0},
+        {0, 0, 0, 1}
+    };
+    vector<vector<double>> yRotation
+            {
+                    {cos(yaw), 0, sin(yaw), 0},
+                    {0, 1, 0, 0},
+                    {-sin(yaw), 0, cos(yaw), 0},
+                    {0, 0, 0, 1}
+            };
+    vector<vector<double>> zRotation
+    {
+        {cos(roll),-sin(roll), 0, 0},
+        {sin(roll), cos(roll), 0, 0},
+        {0, 0, 1, 0},
+        {0, 0, 0, 1}
+    };
+
+    return math.matrixMult(xRotation, math.matrixMult(yRotation, zRotation));
+}
+
+
+
+
+
+

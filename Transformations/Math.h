@@ -20,7 +20,6 @@ class Math
         tuple<double, double, double> cross(tuple<double, double, double> u, tuple<double, double, double> w);
         double degreeToRadian(double degree);
         vector<vector<double>> matrixMult(vector<vector<double>> matrixA, vector<vector<double>> matrixB);
-        vector<vector<double>> oneDimensionMatrixMult(vector<vector<double>> matrixA, vector<vector<double>> matrixB);
         vector<vector<double>> transposedMatrix(vector<vector<double>> matrix);
         vector<vector<double>> adjacencyMatrix(vector<vector<double>> matrix, int i, int j);
         double sarrus(vector<vector<double>> matrix);
@@ -28,6 +27,7 @@ class Math
         vector<vector<double>> adjacencyCalculator(vector<vector<double>> matrix);
         vector<vector<double>> inverseMatrix(vector<vector<double>> matrix);
         vector<double> vectorMatrixMult(vector<double> vectorA, vector<vector<double>> matrixB);
+        vector<vector<double>> tupleToVector(tuple<double, double, double>);
 };
 
 #endif //SHADERS_MATH_H

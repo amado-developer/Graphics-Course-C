@@ -73,7 +73,7 @@ CMAKE_BINARY_DIR = /Users/amado-developer/College/Graphics/GraphicsCourse-Simple
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Shaders.dir/all
+all: CMakeFiles/Transformations.dir/all
 
 .PHONY : all
 
@@ -83,36 +83,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Shaders.dir/clean
+clean: CMakeFiles/Transformations.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Shaders.dir
+# Target rules for target CMakeFiles/Transformations.dir
 
 # All Build rule for target.
-CMakeFiles/Shaders.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Shaders/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Shaders"
-.PHONY : CMakeFiles/Shaders.dir/all
+CMakeFiles/Transformations.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Shaders/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Transformations"
+.PHONY : CMakeFiles/Transformations.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Shaders.dir/rule: cmake_check_build_system
+CMakeFiles/Transformations.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Shaders/cmake-build-debug/CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Shaders.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Transformations.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Shaders/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Shaders.dir/rule
+.PHONY : CMakeFiles/Transformations.dir/rule
 
 # Convenience name for target.
-Shaders: CMakeFiles/Shaders.dir/rule
+Transformations: CMakeFiles/Transformations.dir/rule
 
-.PHONY : Shaders
+.PHONY : Transformations
 
 # clean rule for target.
-CMakeFiles/Shaders.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shaders.dir/build.make CMakeFiles/Shaders.dir/clean
-.PHONY : CMakeFiles/Shaders.dir/clean
+CMakeFiles/Transformations.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformations.dir/build.make CMakeFiles/Transformations.dir/clean
+.PHONY : CMakeFiles/Transformations.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
