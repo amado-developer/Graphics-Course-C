@@ -97,7 +97,7 @@ void Render::glClear(bool isAllWindow)
         {
             for (int j{0}; j < width; j++)
             {
-                zbuffer[j][i] = -INFINITY;
+                zbuffer[j][i] = INFINITY;
             }
         }
     }
@@ -112,7 +112,7 @@ void Render::setActiveRender(vector<double>(*activeShader)
 }
 void Render::glColor(double r, double g, double b)
 {
-//    cout<<"r "<<r*255.0<<"g "<<g*255.0<<" b "<<b*255.0<<endl;
+
     pointColor[2] = (unsigned char) (r * 255.0);
     pointColor[1] = (unsigned char) (g * 255.0);
     pointColor[0] = (unsigned char) (b * 255.0);
