@@ -6,21 +6,61 @@
 
 #IncludeRegexTransform: 
 
-/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/Math.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Math.cpp
+Math.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Math.h
+math.h
+-
+
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Math.h
 tuple
 -
 
-/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/Render.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Obj.cpp
+Obj.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Obj.h
+iostream
+-
+fstream
+-
+sstream
+-
+
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Obj.h
+vector
+-
+string
+-
+
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Render.cpp
+iostream
+-
+Render.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Render.h
+algorithm
+-
+Render.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Render.h
+Obj.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Obj.h
+vector
+-
+cmath
+-
+Math.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Math.h
+
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Render.h
 vector
 -
 string
 -
 Math.h
-/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/Math.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Math.h
 
-/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/main.cpp
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/main.cpp
 iostream
 -
 Render.h
-/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/Render.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Render.h
 

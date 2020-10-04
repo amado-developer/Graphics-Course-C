@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/Math.cpp" "/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/cmake-build-debug/CMakeFiles/SR4_FlatShading.dir/Math.cpp.o"
-  "/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/Obj.cpp" "/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/cmake-build-debug/CMakeFiles/SR4_FlatShading.dir/Obj.cpp.o"
-  "/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/Render.cpp" "/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/cmake-build-debug/CMakeFiles/SR4_FlatShading.dir/Render.cpp.o"
-  "/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/main.cpp" "/Users/amado-developer/College/Graphics/Graphics-Course-C/SR4-FlatShading/cmake-build-debug/CMakeFiles/SR4_FlatShading.dir/main.cpp.o"
+  "/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Math.cpp" "/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/cmake-build-debug/CMakeFiles/SR4_FlatShading.dir/Math.cpp.o"
+  "/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Obj.cpp" "/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/cmake-build-debug/CMakeFiles/SR4_FlatShading.dir/Obj.cpp.o"
+  "/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/Render.cpp" "/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/cmake-build-debug/CMakeFiles/SR4_FlatShading.dir/Render.cpp.o"
+  "/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/main.cpp" "/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR4-FlatShading/cmake-build-debug/CMakeFiles/SR4_FlatShading.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
