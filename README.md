@@ -1,4 +1,5 @@
 # GraphicsCourse-SimpleRenderer-C
 Simple Renderer in c++
 
-![github-small](Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/out.bmp)
+<h1>SR3-Models </h1>
+<img src="images/sr3.bmp" width = "800px" />
