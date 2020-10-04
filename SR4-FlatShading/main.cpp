@@ -8,7 +8,7 @@ int main() {
     r.glClear(false);
     r.glColor(1, 1, 1);
     r.setIsPixels(true);
-    r.load("harry_potter.obj", {400, -3000, 0}, {1000, 1000, 1500});
+    r.load("harry_potter.obj", {400, -2800, 0}, {1000, 1000, 1500});
     r.glFinish("out.bmp");
     return 0;
 
