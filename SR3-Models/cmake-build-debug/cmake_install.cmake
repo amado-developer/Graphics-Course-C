@@ -1,4 +1,4 @@
-# Install script for directory: /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models
+# Install script for directory: /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

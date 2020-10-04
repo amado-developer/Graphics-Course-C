@@ -64,10 +64,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models
+CMAKE_SOURCE_DIR = /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -94,14 +94,14 @@ clean: CMakeFiles/SR3_Models.dir/clean
 CMakeFiles/SR3_Models.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SR3_Models.dir/build.make CMakeFiles/SR3_Models.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SR3_Models.dir/build.make CMakeFiles/SR3_Models.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target SR3_Models"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target SR3_Models"
 .PHONY : CMakeFiles/SR3_Models.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SR3_Models.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SR3_Models.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/SR3_Models.dir/rule
 
 # Convenience name for target.

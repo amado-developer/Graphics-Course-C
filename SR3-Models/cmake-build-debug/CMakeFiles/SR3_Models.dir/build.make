@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models
+CMAKE_SOURCE_DIR = /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SR3_Models.dir/depend.make
@@ -79,42 +79,42 @@ include CMakeFiles/SR3_Models.dir/flags.make
 
 CMakeFiles/SR3_Models.dir/main.cpp.o: CMakeFiles/SR3_Models.dir/flags.make
 CMakeFiles/SR3_Models.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SR3_Models.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SR3_Models.dir/main.cpp.o -c /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SR3_Models.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SR3_Models.dir/main.cpp.o -c /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/main.cpp
 
 CMakeFiles/SR3_Models.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SR3_Models.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/main.cpp > CMakeFiles/SR3_Models.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/main.cpp > CMakeFiles/SR3_Models.dir/main.cpp.i
 
 CMakeFiles/SR3_Models.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SR3_Models.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/main.cpp -o CMakeFiles/SR3_Models.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/main.cpp -o CMakeFiles/SR3_Models.dir/main.cpp.s
 
 CMakeFiles/SR3_Models.dir/Render.cpp.o: CMakeFiles/SR3_Models.dir/flags.make
 CMakeFiles/SR3_Models.dir/Render.cpp.o: ../Render.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SR3_Models.dir/Render.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SR3_Models.dir/Render.cpp.o -c /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Render.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SR3_Models.dir/Render.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SR3_Models.dir/Render.cpp.o -c /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/Render.cpp
 
 CMakeFiles/SR3_Models.dir/Render.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SR3_Models.dir/Render.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Render.cpp > CMakeFiles/SR3_Models.dir/Render.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/Render.cpp > CMakeFiles/SR3_Models.dir/Render.cpp.i
 
 CMakeFiles/SR3_Models.dir/Render.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SR3_Models.dir/Render.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Render.cpp -o CMakeFiles/SR3_Models.dir/Render.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/Render.cpp -o CMakeFiles/SR3_Models.dir/Render.cpp.s
 
 CMakeFiles/SR3_Models.dir/Obj.cpp.o: CMakeFiles/SR3_Models.dir/flags.make
 CMakeFiles/SR3_Models.dir/Obj.cpp.o: ../Obj.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SR3_Models.dir/Obj.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SR3_Models.dir/Obj.cpp.o -c /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Obj.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SR3_Models.dir/Obj.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SR3_Models.dir/Obj.cpp.o -c /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/Obj.cpp
 
 CMakeFiles/SR3_Models.dir/Obj.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SR3_Models.dir/Obj.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Obj.cpp > CMakeFiles/SR3_Models.dir/Obj.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/Obj.cpp > CMakeFiles/SR3_Models.dir/Obj.cpp.i
 
 CMakeFiles/SR3_Models.dir/Obj.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SR3_Models.dir/Obj.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/Obj.cpp -o CMakeFiles/SR3_Models.dir/Obj.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/Obj.cpp -o CMakeFiles/SR3_Models.dir/Obj.cpp.s
 
 # Object files for target SR3_Models
 SR3_Models_OBJECTS = \
@@ -130,7 +130,7 @@ SR3_Models: CMakeFiles/SR3_Models.dir/Render.cpp.o
 SR3_Models: CMakeFiles/SR3_Models.dir/Obj.cpp.o
 SR3_Models: CMakeFiles/SR3_Models.dir/build.make
 SR3_Models: CMakeFiles/SR3_Models.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable SR3_Models"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable SR3_Models"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SR3_Models.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -143,6 +143,6 @@ CMakeFiles/SR3_Models.dir/clean:
 .PHONY : CMakeFiles/SR3_Models.dir/clean
 
 CMakeFiles/SR3_Models.dir/depend:
-	cd /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug /Users/amado-developer/College/Graphics/Graphics-Course-C/SR3-Models/cmake-build-debug/CMakeFiles/SR3_Models.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug /Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/SR3-Models/cmake-build-debug/CMakeFiles/SR3_Models.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SR3_Models.dir/depend
 
