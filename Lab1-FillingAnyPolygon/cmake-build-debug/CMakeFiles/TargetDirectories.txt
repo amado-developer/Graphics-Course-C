@@ -1,0 +1,3 @@
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Lab1-FillingAnyPolygon/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Lab1-FillingAnyPolygon/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Lab1-FillingAnyPolygon/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir

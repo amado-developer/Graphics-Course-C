@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Lab1-FillingAnyPolygon/Render.h
+vector
+-
+string
+-
+
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Lab1-FillingAnyPolygon/main.cpp
+iostream
+-
+Render.h
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Lab1-FillingAnyPolygon/Render.h
+
