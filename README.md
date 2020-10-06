@@ -6,3 +6,8 @@ Simple Renderer in c++
 
 <h1> SR4-FlatShading </h1>
 <img src="images/sr4.bmp" width = "700px" />
+
+<h1> Lab1-FillingAnyPolygon </h1>
+<img src="images/polygon.bmp" width = "700px" />
+
+
