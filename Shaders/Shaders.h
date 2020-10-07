@@ -11,7 +11,7 @@
 #include <random>
 
 #include "Render.h"
-#include "../Shaders/Texture.h"
+#include "Texture.h"
 using namespace std;
 
 class Shaders

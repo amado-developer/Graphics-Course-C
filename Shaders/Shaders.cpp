@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Shaders.h"
 #include "Math.h"
-#include "../Shaders/Texture.h"
+#include "Texture.h"
 
 
 vector<double> Shaders::gourad(double &u, double &v, double &w,

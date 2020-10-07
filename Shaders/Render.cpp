@@ -1,13 +1,9 @@
-//
-// Created by Amado Garcia on 9/9/20.
-//
-
 #include "Render.h"
 #include <iostream>
 #include <algorithm>
 
 #include "Obj.h"
-#include "../Shaders/Texture.h"
+#include "Texture.h"
 #include <vector>
 #include <cmath>
 #include "Math.h";
@@ -109,7 +105,7 @@ void Render::setActiveRender(vector<double>(*activeShader)
          tuple<double, double, double> &nA, tuple<double, double, double> &nB, tuple<double, double, double> &nC,
          Texture &texture, tuple<double, double, double> &light))
 {
-     this->activeShader = activeShader;
+    this->activeShader = activeShader;
 }
 
 void Render::glColor(double r, double g, double b)
@@ -288,7 +284,7 @@ void Render::glTriangle(tuple<int, int, int> A, tuple<int, int, int> B, tuple<in
                         tuple<double, double> tA, tuple<double, double> tB, tuple<double, double> tC,
                         tuple<double, double, double> nA, tuple<double, double, double> nB,
                         tuple<double, double, double> nC
-                        )
+)
 {
     vector<int> bbox = this->bbox(6, get<0>(A),get<1>(A),  get<0>(B), get<1>(B), get<0>(C), get<1>(C));
     int xMin = bbox.at(0);
@@ -432,11 +428,11 @@ void Render::load(string filename, vector<double> translate, vector<double> scal
 tuple<double, double, double> Render::transform(tuple<double, double, double> vertex, vector<double> translate, vector<double> scale)
 {
     return tuple<double, double, double>
-    {
-        (round(get<0>(vertex) * scale.at(0) + translate.at(0))),
-        (round(get<1>(vertex) * scale.at(1) + translate.at(1))),
-        (round(get<2>(vertex) * scale.at(2) + translate.at(2)))
-    };
+            {
+                    (round(get<0>(vertex) * scale.at(0) + translate.at(0))),
+                    (round(get<1>(vertex) * scale.at(1) + translate.at(1))),
+                    (round(get<2>(vertex) * scale.at(2) + translate.at(2)))
+            };
 }
 void Render::setIsPixels(bool isPixels)
 {

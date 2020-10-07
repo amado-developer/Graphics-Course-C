@@ -29,49 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdf819f5-483e-4009-a1ef-a5ecd58d0bbf" name="Default Changelist" comment=" get&lt;">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Lab1-FillingAnyPolygon.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Render.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Render.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir/CXX.includecache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir/depend.internal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir/link.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab1_FillingAnyPolygon.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Lab1_FillingAnyPolygon" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Lab1_FillingAnyPolygon.cbp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/polygon.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="fdf819f5-483e-4009-a1ef-a5ecd58d0bbf" name="Default Changelist" comment=" get&lt;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +83,7 @@
       <workItem from="1601843077244" duration="5733000" />
       <workItem from="1601868360175" duration="68000" />
       <workItem from="1601868529706" duration="2752000" />
-      <workItem from="1601950068783" duration="4968000" />
+      <workItem from="1601950068783" duration="5261000" />
     </task>
     <servers />
   </component>
@@ -149,46 +107,46 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="504" height="582" key="DebuggerActiveHint/0.0.1792.1120@0.0.1792.1120" timestamp="1601951367214" />
-    <state width="1740" height="297" key="GridCell.Tab.0.bottom" timestamp="1601954954468">
+    <state width="1740" height="377" key="GridCell.Tab.0.bottom" timestamp="1601955788835">
       <screen x="0" y="23" width="1792" height="1042" />
     </state>
     <state width="788" height="305" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601954130427" />
-    <state width="1740" height="297" key="GridCell.Tab.0.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1601954954468" />
-    <state width="1740" height="297" key="GridCell.Tab.0.center" timestamp="1601954954467">
+    <state width="1740" height="377" key="GridCell.Tab.0.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1601955788835" />
+    <state width="1740" height="377" key="GridCell.Tab.0.center" timestamp="1601955788834">
       <screen x="0" y="23" width="1792" height="1042" />
     </state>
     <state width="788" height="305" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601954130426" />
-    <state width="1740" height="297" key="GridCell.Tab.0.center/0.23.1792.1042@0.23.1792.1042" timestamp="1601954954467" />
-    <state width="1740" height="297" key="GridCell.Tab.0.left" timestamp="1601954954466">
+    <state width="1740" height="377" key="GridCell.Tab.0.center/0.23.1792.1042@0.23.1792.1042" timestamp="1601955788834" />
+    <state width="1740" height="377" key="GridCell.Tab.0.left" timestamp="1601955788834">
       <screen x="0" y="23" width="1792" height="1042" />
     </state>
     <state width="788" height="305" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601954130425" />
-    <state width="1740" height="297" key="GridCell.Tab.0.left/0.23.1792.1042@0.23.1792.1042" timestamp="1601954954466" />
-    <state width="1740" height="297" key="GridCell.Tab.0.right" timestamp="1601954954468">
+    <state width="1740" height="377" key="GridCell.Tab.0.left/0.23.1792.1042@0.23.1792.1042" timestamp="1601955788834" />
+    <state width="1740" height="377" key="GridCell.Tab.0.right" timestamp="1601955788835">
       <screen x="0" y="23" width="1792" height="1042" />
     </state>
     <state width="788" height="305" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601954130426" />
-    <state width="1740" height="297" key="GridCell.Tab.0.right/0.23.1792.1042@0.23.1792.1042" timestamp="1601954954468" />
-    <state width="1740" height="377" key="GridCell.Tab.1.bottom" timestamp="1601953785103">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1740" height="377" key="GridCell.Tab.0.right/0.23.1792.1042@0.23.1792.1042" timestamp="1601955788835" />
+    <state width="1740" height="377" key="GridCell.Tab.1.bottom" timestamp="1601955788836">
+      <screen x="0" y="23" width="1792" height="1042" />
     </state>
     <state width="1740" height="377" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601953785103" />
-    <state width="1740" height="377" key="GridCell.Tab.1.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1601867166307" />
-    <state width="1740" height="377" key="GridCell.Tab.1.center" timestamp="1601953785102">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1740" height="377" key="GridCell.Tab.1.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1601955788836" />
+    <state width="1740" height="377" key="GridCell.Tab.1.center" timestamp="1601955788835">
+      <screen x="0" y="23" width="1792" height="1042" />
     </state>
     <state width="1740" height="377" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601953785102" />
-    <state width="1740" height="377" key="GridCell.Tab.1.center/0.23.1792.1042@0.23.1792.1042" timestamp="1601867166306" />
-    <state width="1740" height="377" key="GridCell.Tab.1.left" timestamp="1601953785102">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1740" height="377" key="GridCell.Tab.1.center/0.23.1792.1042@0.23.1792.1042" timestamp="1601955788835" />
+    <state width="1740" height="377" key="GridCell.Tab.1.left" timestamp="1601955788835">
+      <screen x="0" y="23" width="1792" height="1042" />
     </state>
     <state width="1740" height="377" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601953785102" />
-    <state width="1740" height="377" key="GridCell.Tab.1.left/0.23.1792.1042@0.23.1792.1042" timestamp="1601867166306" />
-    <state width="1740" height="377" key="GridCell.Tab.1.right" timestamp="1601953785103">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1740" height="377" key="GridCell.Tab.1.left/0.23.1792.1042@0.23.1792.1042" timestamp="1601955788835" />
+    <state width="1740" height="377" key="GridCell.Tab.1.right" timestamp="1601955788836">
+      <screen x="0" y="23" width="1792" height="1042" />
     </state>
     <state width="1740" height="377" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601953785103" />
-    <state width="1740" height="377" key="GridCell.Tab.1.right/0.23.1792.1042@0.23.1792.1042" timestamp="1601867166307" />
+    <state width="1740" height="377" key="GridCell.Tab.1.right/0.23.1792.1042@0.23.1792.1042" timestamp="1601955788836" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

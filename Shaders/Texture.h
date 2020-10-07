@@ -17,7 +17,10 @@ class Texture
         int height;
     public:
         Texture(char* path);
-        void read();
+
+    Texture();
+
+    void read();
         vector<double> getColor(double tx, double ty);
 };
 
