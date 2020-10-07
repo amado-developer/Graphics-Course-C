@@ -10,4 +10,7 @@ Simple Renderer in c++
 <h1> Lab1-FillingAnyPolygon </h1>
 <img src="images/polygon.bmp" width = "700px" />
 
+<h1> Lab2-Shaders </h1>
+<img src="images/shaders.bmp" width = "700px" />
+
 
