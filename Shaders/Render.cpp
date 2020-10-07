@@ -7,7 +7,7 @@
 #include <algorithm>
 
 #include "Obj.h"
-#include "Texture.h"
+#include "../Shaders/Texture.h"
 #include <vector>
 #include <cmath>
 #include "Math.h";

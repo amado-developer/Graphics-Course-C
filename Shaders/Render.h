@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 #include "Math.h"
-#include "Texture.h"
+#include "../Shaders/Texture.h"
 using namespace std;
 class Render
 {

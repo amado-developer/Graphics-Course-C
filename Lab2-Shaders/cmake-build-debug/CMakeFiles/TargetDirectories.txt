@@ -1,0 +1,3 @@
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Lab2-Shaders/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Lab2-Shaders/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/amado-developer/College/Graphics/GraphicsCourse-SimpleRenderer-C/Lab2-Shaders/cmake-build-debug/CMakeFiles/Lab2_Shaders.dir
