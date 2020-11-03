@@ -1,4 +1,4 @@
-# GraphicsCourse-SimpleRenderer-C
+# GraphicsCourse-SimpleRenderer-C++
 Simple Renderer in c++
 
 <h1>SR3-Models </h1>
